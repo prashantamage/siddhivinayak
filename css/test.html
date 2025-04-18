@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Navigation Bar</title>
+
+    <!-- FontAwesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Navigation Bar Styling */
+        nav {
+            background-color: #0D47A1; /* Deep Blue Background */
+            padding: 15px;
+            display: flex;
+            justify-content: center; /* Center the nav items */
+            gap: 20px; /* Spacing between items */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        /* Navigation Links - Styled as Boxes */
+        nav a {
+            color: #FFFFFF; /* White Text */
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background-color: #1565C0; /* Darker Blue Box */
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hover Effect - Shadow & Scale */
+        nav a:hover {
+            background-color: #1976D2; /* Lighter Blue */
+            transform: scale(1.1); /* Slight Zoom Effect */
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Shadow Effect */
+        }
+
+        /* Icon Styling */
+        nav a i {
+            font-size: 20px; /* Bigger Icons */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#about"><i class="fas fa-user"></i> About</a>
+        <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+        <a href="#projects"><i class="fas fa-briefcase"></i> Projects</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+
+</body>
+</html>

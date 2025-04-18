@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typewriter Effect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .typewriter {
+            font-size: 24px;
+            font-weight: bold;
+            border-right: 3px solid black; /* Cursor effect */
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="typewriter" id="typewriter"></div>
+
+    <script>
+        const sentences = [
+            "Welcome to my portfolio!",
+            "I am a passionate web developer.",
+            "Let's build something amazing together!"
+        ];
+
+        let sentenceIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const delayBeforeDelete = 1000;
+        const typewriterElement = document.getElementById("typewriter");
+
+        function typeEffect() {
+            const currentSentence = sentences[sentenceIndex];
+
+            if (!isDeleting) {
+                // Typing the sentence
+                typewriterElement.textContent = currentSentence.substring(0, charIndex + 1);
+                charIndex++;
+
+                if (charIndex === currentSentence.length) {
+                    setTimeout(() => { isDeleting = true; }, delayBeforeDelete);
+                }
+            } else {
+                // Deleting the sentence
+                typewriterElement.textContent = currentSentence.substring(0, charIndex - 1);
+                charIndex--;
+
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    sentenceIndex = (sentenceIndex + 1) % sentences.length; // Move to next sentence
+                }
+            }
+
+            // Call the function again
+            setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
+        }
+
+        // Start the effect
+        typeEffect();
+    </script>
+
+</body>
+</html>
