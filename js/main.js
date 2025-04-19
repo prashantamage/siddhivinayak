@@ -59,6 +59,7 @@ require(["jquery", "bootstrap", "aos", "gsap","particles", "fontawesome"], funct
         stagger: 0.2
     });
 
+
     // tsParticles.tsParticles.load("tsparticles", {
     //     background: {
     //       //color: "#0d0d0d"
