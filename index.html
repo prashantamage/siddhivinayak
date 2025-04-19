@@ -18,6 +18,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="css/aos.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 
 </head>
 
@@ -30,7 +35,7 @@
                 <div class="d-flex justify-content-between align-items-center flex-wrap">
                     <!-- Left: Location & Email Icons -->
                     <div class="d-flex align-items-center flex-wrap">
-                        <a href="#" class="text-muted small me-3 d-flex align-items-center">
+                        <a href="#map" class="text-muted small me-3 d-flex align-items-center">
                             <i class="fas fa-map-marker-alt text-primary me-1"></i>
                             <span class="d-none d-lg-inline">Find A Location</span>
                         </a>
@@ -360,6 +365,24 @@
         </article>
     </section>
 
+    <section class="map-section" id="map">
+        <article class="map-section-container">
+            <div class="container">
+                <div class="container my-5">
+                    <h2 class="text-center mb-4">Our Location</h2>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.9483592953916!2d73.7754734!3d18.71113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b7000e634bfb%3A0x59621c083bd26510!2sVaishnav%20General%20Electronics!5e0!3m2!1sen!2sin!4v1745086397013!5m2!1sen!2sin"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+            </div>
+        </article>
+    </section>
+
     <script data-main="js/main" src="js/require.min.js"></script>
     <script>
         const cursor = document.querySelector('.custom-cursor');
@@ -372,9 +395,9 @@
 
     <script>
         const sentences = [
-            "Fullstack Developer",
-            "</Coder>",
-            "Web Developer"
+            "Auto Switch",
+            "Desktop Computers",
+            "Other Products"
         ];
 
         let sentenceIndex = 0;

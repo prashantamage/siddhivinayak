@@ -683,11 +683,15 @@ section {
 
 .services-section,
 .gallery-section,
-.about-section {
+.about-section, 
+.map-section {
     padding: 35px 10px;
 }
 
-.services-section-container {
+.services-section-container,
+.gallery-section-container,
+.map-section-container,
+.about-section-container {
     background-color: white;
     border-radius: 15px;
     padding: 20px 20px;
@@ -707,6 +711,23 @@ section {
     transform: translateY(-8px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
 
 .hobbies-section {
     background: var(--theme-color);
