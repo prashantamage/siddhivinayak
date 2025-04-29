@@ -11,7 +11,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -32,34 +31,45 @@
         class="btn btn-light rounded-circle shadow d-flex align-items-center justify-content-center">
         <i class="bi bi-arrow-up"></i>
     </button>
+    <div class="floating-message">
+        <div id="options" class="options hidden">
+            <a href="https://wa.me/919322384213?text=Hello%2C%0AI%20would%20like%20to%20inquire%20about%20the%20services%20offered%20by%20Siddhivinayak%20Winding%20Works.%0APlease%20let%20me%20know%20how%20I%20can%20get%20started.%0AThank%20you%21" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>                         
+            <a href="mailto:siddhivinayakwindingworks@gmail.com?subject=Service%20Inquiry%20-%20Siddhivinayak%20Winding%20Works&body=Hello,%0A%0AI would like to inquire about the services offered by Siddhivinayak Winding Works.%0APlease let me know how I can get started.%0A%0AThank you!">
+                <i class="fas fa-envelope"></i>
+              </a>
+            <a href="#inquiry">
+                <i class="fas fa-comment-dots"></i>
+            </a>
+        </div>
 
+        <button id="mainButton">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
     <header>
 
         <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center flex-wrap">
-                    <!-- Left: Location & Email Icons -->
                     <div class="d-flex align-items-center flex-wrap">
                         <a href="#location" class="text-muted small me-3 d-flex align-items-center">
                             <i class="fas fa-map-marker-alt theme-color-text me-1"></i>
                             <span class="d-none d-lg-inline">Find A Location</span>
                         </a>
-                        <!-- <a href="mailto:siddhivinayakwindingworks@gmail.com"
-                            class="text-muted small d-flex align-items-center">
-                            <i class="fas fa-envelope text-primary me-1"></i>
-                            <span class="d-none d-lg-inline">siddhivinayakwindingworks@gmail.com</span>
-                        </a> -->
                         <a href="#" data-bs-toggle="modal" data-bs-target="#timingModal" class="text-muted small ms-3">
                             <i class="fas fa-clock theme-color-text"></i>
                             <span class="d-none d-lg-inline">Working Hours</span>
                         </a>
                     </div>
-
-                    <!-- Right: Social Icons -->
                     <div class="d-flex align-items-center mt-2 mt-lg-0">
-                        <a class="btn p-0 me-3" href="https://www.facebook.com/profile.php?id=61575695782965" target="_blank"><i class="fab fa-facebook-f theme-color-text"></i></a>
-                        <a class="btn p-0 me-3" href="https://linkedin.com/in/siddhivinayak-winding-works-0a7152361" target="_blank"><i class="fab fa-linkedin theme-color-text"></i></a>
-                        <a class="btn p-0 me-3" href="https://www.instagram.com/siddhivinayak_winding_works" target="_blank"><i class="fab fa-instagram theme-color-text"></i></a>
+                        <a class="btn p-0 me-3" href="https://www.facebook.com/profile.php?id=61575695782965"
+                            target="_blank"><i class="fab fa-facebook-f theme-color-text"></i></a>
+                        <a class="btn p-0 me-3" href="https://linkedin.com/in/siddhivinayak-winding-works-0a7152361"
+                            target="_blank"><i class="fab fa-linkedin theme-color-text"></i></a>
+                        <a class="btn p-0 me-3" href="https://www.instagram.com/siddhivinayak_winding_works"
+                            target="_blank"><i class="fab fa-instagram theme-color-text"></i></a>
                     </div>
                 </div>
             </div>
@@ -67,50 +77,47 @@
 
         <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
             <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light">
+                <nav class="navbar navbar-expand-lg navbar-light position-relative">
                     <a href="#" class="navbar-brand p-0">
                         <img src="assets/images/logo111.png" class="logo" alt="Logo">
                     </a>
+                    <p class="shop-name">Siddhivinayak Winding Works</p>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarCollapse"><span class="fa fa-bars"></span>
+                        data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav mx-0 mx-lg-auto navbar-list">
                             <a href="#home" class="nav-item nav-link active">Home</a>
                             <a href="#services" class="nav-item nav-link">Services</a>
-                            <a href="#gallery" class="nav-item nav-link">Gallary</a>
+                            <a href="#gallery" class="nav-item nav-link">Gallery</a>
                             <a href="#inquiry" class="nav-item nav-link">Inquiry</a>
-                            <a href="#contact" class="nav-item nav-link">Contact</a>
-                            <a href="#about" class="nav-item nav-link">About</a>
-                            <!-- <div class="nav-btn px-3">
-                                    <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
-                                    <a href="#" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Get a Quote</a>
-                                </div> -->
+                            <a href="#contact" class="nav-item nav-link">Contact Us</a>
+                            <a href="#about" class="nav-item nav-link">About Us</a>
                         </div>
                     </div>
                     <div class="d-none d-xl-flex flex-shrink-0 ps-4">
                         <a href="#" class="btn btn-light btn-lg-square position-relative wow tada vibrating-icon"
-                            data-wow-delay=".9s"><i class="fa fa-mobile-alt fa-2x"></i>
+                            data-wow-delay=".9s">
+                            <i class="fa fa-mobile-alt fa-2x"></i>
                             <div class="position-absolute" style="top: 7px; right: 12px;">
-                                <span>
-                                    <i class="fa fa-bell text-secondary "></i></span>
+                                <i class="fa fa-bell text-secondary"></i>
                             </div>
                         </a>
                         <div class="d-flex flex-column ms-3">
                             <span class="pulsing-text">Call to Our Experts</span>
-                            <a href="tel:+ 0123 456 7890"><span class="text-dark">+91 9322384213</span></a>
+                            <a href="tel:+919322384213"><span class="text-dark">+91 9322384213</span></a>
                         </div>
                     </div>
                 </nav>
+
             </div>
         </div>
     </header>
 
     <section id="home">
-        <!-- <div id="particles-container"></div> -->
         <div class="home-container my-5">
             <div class="row justify-content-center align-items-center">
-                <!-- corosell -->
                 <div class="typewriter-section">
                     <p class="">
                         We provide services for <span class="typewriter" id="typewriter"></span>.
@@ -118,17 +125,11 @@
                 </div>
                 <div class="container-fluid p-0">
                     <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
-
-                        <!-- Indicators -->
                         <div class="carousel-indicators">
-
                             <i data-bs-target="#customCarousel" data-bs-slide-to="0" class=" active"></i>
                             <i data-bs-target="#customCarousel" data-bs-slide-to="1" class=""></i>
-
                             <i data-bs-target="#customCarousel" data-bs-slide-to="2"></i>
                         </div>
-
-                        <!-- Slides -->
                         <div class="carousel-inner">
                             <div class="carousel-item active"
                                 style="background-image: url('assets/images/corousel/step1.jpg');">
@@ -191,8 +192,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Controls -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel"
                             data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
@@ -215,95 +214,6 @@
                 </div>
             </div>
 
-        </div>
-    </section>
-
-    <section class="about-section" id="about">
-        <div class="section-header">
-            <h2>About Us</h2>
-        </div>
-        <div class="about-section-container">
-            <div class="row align-items-start">
-
-                <!-- Left Side: About Content -->
-                <div class="col-md-8 mb-4">
-                    <p class="about-text">
-                        <strong> Siddhivinayak Winding Works </strong> is your trusted partner for all your motor
-                        and transformer repair needs. Established with a commitment to excellence, we provide
-                        specialized services in electric motor repairs and servicing, motor rewinding and repairs up
-                        to 150 HP, Siemens servo motor repairs, and transformer repairs. Our team of skilled
-                        technicians ensures that every project is handled with precision and care, delivering
-                        efficient, long-lasting solutions.
-                        we focus on providing high-quality, cost-effective services to help businesses minimize
-                        downtime and extend the life of their machinery. Whether it’s restoring electric motors,
-                        rewinding motors, or servicing transformers, we pride ourselves on our expertise and
-                        customer satisfaction.
-                    </p>
-                    <p>
-                        <strong>Let Siddhivinayak Winding Works be your reliable service partner—empowering your
-                            machines to perform at their best! </strong>
-                    </p>
-                </div>
-
-                <!-- Right Side: Accordion for Vision & Mission -->
-                <div class="col-md-4">
-                    <div class="accordion" id="aboutAccordion">
-
-                        <!-- Vision -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingVision">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseVision" aria-expanded="true"
-                                    aria-controls="collapseVision">
-                                    Vision
-                                </button>
-                            </h2>
-                            <div id="collapseVision" class="accordion-collapse collapse show"
-                                aria-labelledby="headingVision" data-bs-parent="#aboutAccordion">
-                                <div class="accordion-body">
-                                    To become the leading provider of reliable and high-quality motor and
-                                    transformer repair services, empowering businesses with efficient and
-                                    long-lasting solutions.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Mission -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingMission">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseMission" aria-expanded="false"
-                                    aria-controls="collapseMission">
-                                    Mission
-                                </button>
-                            </h2>
-                            <div id="collapseMission" class="accordion-collapse collapse"
-                                aria-labelledby="headingMission" data-bs-parent="#aboutAccordion">
-                                <div class="accordion-body">
-                                    Our mission is to deliver expert repairs, rewinding, and servicing for electric
-                                    motors and transformers, ensuring minimal downtime and maximum performance for
-                                    our clients, with a focus on quality, precision, and customer satisfaction.
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <br>
-        </div>
-
-    </section>
-
-    <section class="gallery-section" id="gallery">
-        <div class="section-header">
-            <h2>Gallery</h2>
-        </div>
-        <div class="about-section-container">
-            <div class="position-relative">
-                <div id="galleryScroll" class="d-flex flex-wrap overflow-hidden gallery-scroll-container">
-                </div>
-            </div>
         </div>
     </section>
 
@@ -332,19 +242,45 @@
         </article>
     </section>
 
-    <section class="location-section" id="location">
+    <section class="gallery-section" id="gallery">
         <div class="section-header">
-            <h2>Our location</h2>
+            <h2>Gallery</h2>
         </div>
-        <article class="location-section-container">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.3947444919477!2d73.81837949999999!3d18.735896800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b7006035bfa3%3A0x41d4f6ca3f4e41db!2sSiddhivinayak%20winding%20works!5e0!3m2!1sen!2sin!4v1745736145297!5m2!1sen!2sin"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </article>
+        <div class="about-section-container">
+            <div class="position-relative">
+                <div id="galleryScroll" class="d-flex flex-wrap overflow-hidden gallery-scroll-container">
+                </div>
+            </div>
+        </div>
     </section>
-
+    <section class="inquiry-section" id="inquiry">
+        <div class="section-header">
+            <h2>Inquiry</h2>
+        </div>
+        <div class="inquiry-section-container">
+            <h4 class="text-center mb-5">Send Us Your Query</h4>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form id="queryForm">
+                        <div class="mb-4">
+                            <input type="text" class="form-control" id="name" placeholder="Enter your Name" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="tel" class="form-control" id="mobile"
+                                placeholder="Enter your Mobile Number/Email" required>
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="form-control" id="message" rows="5" placeholder="Write your query here..."
+                                required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary px-5">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="contact-section" id="contact">
         <div class="section-header">
             <h2>Contact Us</h2>
@@ -359,7 +295,6 @@
                         <h5 class="mb-3">PHONE</h5>
                         <p><i class="fas fa-phone-alt"></i><strong> +91 9322384213</strong></p>
                     </div>
-
                     <div class="col-md-4 mb-4 contact-item border-middle">
                         <div class="icon mb-3">
                             <i class="fas fa-map-marker-alt fa-3x theme-color-text"></i>
@@ -368,7 +303,6 @@
                         <strong>Siddhivinayak Winding Works</strong>
                         <p>Gat No. 273 Nighoje - Mahalunge Road,<br>Nighoje, khed,<br>Maharashtra 410501</p>
                     </div>
-
                     <div class="col-md-4 mb-4 contact-item">
                         <div class="icon mb-3">
                             <i class="fas fa-envelope fa-3x theme-color-text"></i>
@@ -376,62 +310,110 @@
                         <h5 class="mb-3">EMAIL</h5>
                         <p><strong> siddhivinayakwindingworks@gmail.com</strong></p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="location-section" id="location">
+        <div class="section-header">
+            <h2>Our Location</h2>
+        </div>
+        <article class="location-section-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.3947444919477!2d73.81837949999999!3d18.735896800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b7006035bfa3%3A0x41d4f6ca3f4e41db!2sSiddhivinayak%20winding%20works!5e0!3m2!1sen!2sin!4v1745736145297!5m2!1sen!2sin"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </article>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="section-header">
+            <h2>About Us</h2>
+        </div>
+        <div class="about-section-container">
+            <div class="row align-items-start">
+                <div class="col-md-8 mb-4">
+                    <p class="about-text">
+                        <strong> Siddhivinayak Winding Works </strong> is your trusted partner for all your motor
+                        and transformer repair needs. Established with a commitment to excellence, we provide
+                        specialized services in electric motor repairs and servicing, motor rewinding and repairs up
+                        to 150 HP, Siemens servo motor repairs, and transformer repairs. Our team of skilled
+                        technicians ensures that every project is handled with precision and care, delivering
+                        efficient, long-lasting solutions.
+                        we focus on providing high-quality, cost-effective services to help businesses minimize
+                        downtime and extend the life of their machinery. Whether it’s restoring electric motors,
+                        rewinding motors, or servicing transformers, we pride ourselves on our expertise and
+                        customer satisfaction.
+                    </p>
+                    <p>
+                        <strong>Let Siddhivinayak Winding Works be your reliable service partner—empowering your
+                            machines to perform at their best! </strong>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="accordion" id="aboutAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingVision">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseVision" aria-expanded="true"
+                                    aria-controls="collapseVision">
+                                    Vision
+                                </button>
+                            </h2>
+                            <div id="collapseVision" class="accordion-collapse collapse show"
+                                aria-labelledby="headingVision" data-bs-parent="#aboutAccordion">
+                                <div class="accordion-body">
+                                    To become the leading provider of reliable and high-quality motor and
+                                    transformer repair services, empowering businesses with efficient and
+                                    long-lasting solutions.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingMission">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseMission" aria-expanded="false"
+                                    aria-controls="collapseMission">
+                                    Mission
+                                </button>
+                            </h2>
+                            <div id="collapseMission" class="accordion-collapse collapse"
+                                aria-labelledby="headingMission" data-bs-parent="#aboutAccordion">
+                                <div class="accordion-body">
+                                    Our mission is to deliver expert repairs, rewinding, and servicing for electric
+                                    motors and transformers, ensuring minimal downtime and maximum performance for
+                                    our clients, with a focus on quality, precision, and customer satisfaction.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
             <br>
-            <h4 class="text-center mb-5">Send Us Your Query</h4>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <form id="queryForm">
-
-                        <div class="mb-4">
-                            <input type="text" class="form-control" id="name" placeholder="Enter your Name" required>
-                        </div>
-
-                        <div class="mb-4">
-                            <input type="tel" class="form-control" id="mobile"
-                                placeholder="Enter your Mobile Number/Email" required>
-                        </div>
-
-                        <div class="mb-4">
-                            <textarea class="form-control" id="message" rows="5" placeholder="Write your query here..."
-                                required></textarea>
-                        </div>
-
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary px-5">Submit</button>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
         </div>
     </section>
 
     <footer class="footer-section pt-5 pb-3">
         <div class="container">
             <div class="row">
-
-                <!-- About Us -->
                 <div class="col-md-4 mb-4">
                     <h5>About Us</h5>
                     <p>We specialize in electric motor repairs, rewinding, and servicing of industrial equipment.
                         Quality and customer satisfaction is our priority.</p>
                 </div>
-
-                <!-- Quick Links -->
                 <div class="col-md-4 mb-4">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
                         <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#inquiry">Inquiry</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <li><a href="#about">About</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact Info -->
                 <div class="col-md-4 mb-4">
                     <h5>Contact Us</h5>
                     <ul class="list-unstyled">
@@ -440,9 +422,12 @@
                         <li><i class="bi bi-geo-alt"></i> Nighoje, khed, Maharashtra </li>
                     </ul>
                     <div class="social-icons mt-3">
-                        <a href="https://www.facebook.com/profile.php?id=61575695782965" target="_blank"><i class="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com/siddhivinayak_winding_works" target="_blank"><i class="bi bi-instagram"></i></a>
-                        <a href="https://linkedin.com/in/siddhivinayak-winding-works-0a7152361" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61575695782965" target="_blank"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/siddhivinayak_winding_works" target="_blank"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="https://linkedin.com/in/siddhivinayak-winding-works-0a7152361" target="_blank"><i
+                                class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
 
@@ -459,18 +444,24 @@
             </div>
         </div>
     </footer>
-
-
     <script data-main="js/main" src="js/require.min.js"></script>
     <script>
-        const cursor = document.querySelector('.custom-cursor');
+        const mainButton = document.getElementById("mainButton");
+        const floatingMessage = document.querySelector(".floating-message");
+      
+        mainButton.addEventListener("click", () => {
+          floatingMessage.classList.toggle("active");
+        });
+      </script>
+      
 
+    <script>
+        const cursor = document.querySelector('.custom-cursor');
         document.addEventListener('mousemove', (e) => {
             cursor.style.top = `${e.clientY}px`;
             cursor.style.left = `${e.clientX}px`;
         });
     </script>
-
     <script>
         const sentences = [
             "Motor Rewinding",
@@ -479,8 +470,6 @@
             "On-Site Repair & Inspection",
             "Servo Motor Services",
             "General Maintenance",
-
-
         ];
 
         let sentenceIndex = 0;
@@ -517,10 +506,8 @@
         }
 
         typeEffect();
-        // Get the button
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-        // Show the button when scrolled down 20px
         window.onscroll = function () {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 scrollToTopBtn.style.display = "block";
@@ -529,7 +516,6 @@
             }
         };
 
-        // Scroll to top when button is clicked
         scrollToTopBtn.addEventListener("click", function () {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
@@ -539,11 +525,11 @@
         function checkOpenStatus() {
             const label = document.getElementById('status-label');
             const now = new Date();
-            const day = now.getDay(); // 0 = Sunday
+            const day = now.getDay();
             const hours = now.getHours();
 
             const isSunday = (day === 0);
-            const isWithinHours = (hours >= 9 && hours < 18); // 9 AM to before 6 PM
+            const isWithinHours = (hours >= 9 && hours < 18);
 
             if (isSunday || !isWithinHours) {
                 label.textContent = "Closed";
@@ -553,8 +539,6 @@
                 label.classList.add("bg-success", "text-white");
             }
         }
-
-        // Run when page loads
         checkOpenStatus();
     </script>
 
@@ -646,7 +630,6 @@
             });
         }
     </script>
-    <!-- Image Modal -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content text-center">
@@ -663,8 +646,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="modal fade" id="timingModal" tabindex="-1" aria-labelledby="timingModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm">
             <div class="modal-content shadow rounded-4">
@@ -699,7 +680,7 @@
                         </li>
                         <li class="d-flex justify-content-between mb-2">
                             <span><i class="far fa-calendar-alt me-2 theme-color-text"></i> Saturday</span>
-                            <span>9:00 AM – 2:00 PM</span>
+                            <span>9:00 AM – 6:00 PM</span>
                         </li>
                         <li class="d-flex justify-content-between">
                             <span><i class="far fa-calendar-alt me-2 theme-color-text"></i> Sunday</span>
@@ -711,4 +692,5 @@
         </div>
     </div>
 </body>
+
 </html>
