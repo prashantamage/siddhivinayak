@@ -21,8 +21,6 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-
 </head>
 
 <body>
@@ -60,11 +58,13 @@
                             <i class="fas fa-map-marker-alt text-danger me-1"></i>
                             <span class="d-none d-lg-inline">Find A Location</span>
                         </a>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#timingModal" class="text-muted small me-3 d-flex align-items-center">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#timingModal"
+                            class="text-muted small me-3 d-flex align-items-center">
                             <i class="fas fa-clock" style="color: #1877f2;"></i>
                             <span class="d-none d-lg-inline">Working Hours</span>
                         </a>
-                        <a href="tel:+919322384213" class="d-inline d-lg-none text-muted small me-3 d-flex align-items-center">
+                        <a href="tel:+919322384213"
+                            class="d-inline d-lg-none text-muted small me-3 d-flex align-items-center">
                             <i class="fa fa-mobile-alt" style="color: #000000;"></i>
                         </a>
                     </div>
@@ -228,7 +228,7 @@
         </div>
         <article class="services-section-container">
             <ul class="service-flex-list">
-                <li><i class="bi bi-arrow-clockwise"></i> Motor Rewinding</li>
+                <li><i class="bi bi-arrow-clockwise"></i> AC/DC Motor Rewinding</li>
                 <li><i class="bi bi-wrench"></i> Crompton Motor Repairs</li>
                 <li><i class="bi bi-gear"></i> Siemens Motor Repairs</li>
                 <li><i class="bi bi-sliders"></i> Siemens Servo Motor Repairs</li>
@@ -266,17 +266,18 @@
             <h4 class="text-center mb-5">Send Us Your Query</h4>
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <form id="queryForm">
+                    <form id="queryForm" onsubmit="submitForm(event)">
                         <div class="mb-4">
-                            <input type="text" class="form-control" id="name" placeholder="Enter your Name" required>
+                            <input type="text" class="form-control" id="formName" placeholder="Enter your Name"
+                                required>
                         </div>
                         <div class="mb-4">
-                            <input type="tel" class="form-control" id="mobile"
+                            <input type="tel" class="form-control" id="formMobile"
                                 placeholder="Enter your Mobile Number/Email" required>
                         </div>
                         <div class="mb-4">
-                            <textarea class="form-control" id="message" rows="5" placeholder="Write your query here..."
-                                required></textarea>
+                            <textarea class="form-control" id="formMessage" rows="5"
+                                placeholder="Write your query here..." required></textarea>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary px-5">Submit</button>
@@ -298,7 +299,7 @@
                             <i class="fas fa-mobile-alt fa-3x" style="color:#1877f2;"></i>
                         </div>
                         <h5 class="mb-3">PHONE</h5>
-                        <p><i class="fas fa-phone-alt" ></i><strong> +91 9322384213</strong></p>
+                        <p><i class="fas fa-phone-alt"></i><strong> +91 9322384213</strong></p>
                     </div>
                     <div class="col-md-4 mb-4 contact-item border-middle">
                         <div class="icon mb-3">
@@ -423,7 +424,8 @@
                     <h5>Contact Us</h5>
                     <ul class="list-unstyled">
                         <li><i class="bi bi-telephone" style="color: #1877f2;"></i> +91 9322384213 </li>
-                        <li><i class="bi bi-envelope" style="color: #ffffff;"></i> siddhivinayakwindingworks@gmail.com </li>
+                        <li><i class="bi bi-envelope" style="color: #ffffff;"></i> siddhivinayakwindingworks@gmail.com
+                        </li>
                         <li><i class="bi bi-geo-alt" style="color: #e4405f;"></i> Nighoje, khed, Maharashtra </li>
                     </ul>
                     <div class="social-icons mt-3">
@@ -450,16 +452,18 @@
             </div>
         </div>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script data-main="js/main" src="js/require.min.js"></script>
     <script>
         // Optional: handle click to apply active class manually (if using JS routing)
         document.querySelectorAll('.nav-link').forEach(link => {
-          link.addEventListener('click', function () {
-            document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
-            this.classList.add('active');
-          });
+            link.addEventListener('click', function () {
+                document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+                this.classList.add('active');
+            });
         });
-      </script>
+    </script>
     <script>
         const mainButton = document.getElementById("mainButton");
         const floatingMessage = document.querySelector(".floating-message");
@@ -645,6 +649,34 @@
             });
         }
     </script>
+    <script>
+        function submitForm(event) {
+          event.preventDefault();
+        
+          const name = document.getElementById('formName').value.trim();
+          const contact = document.getElementById('formMobile').value.trim();
+          const message = document.getElementById('formMessage').value.trim();
+        
+          const formData = new FormData();
+          formData.append('name', name);
+          formData.append('contact', contact);
+          formData.append('message', message);
+        
+          fetch('mailer/send.php', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('responseMessage').innerHTML = `<div class="alert alert-success">${data}</div>`;
+            document.getElementById('queryForm').reset();
+          })
+          .catch(error => {
+            document.getElementById('responseMessage').innerHTML = `<div class="alert alert-danger">❌ Error sending message.</div>`;
+            console.error('Error:', error);
+          });
+        }
+        </script>        
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content text-center">

@@ -6,7 +6,7 @@ require.config({
         aos: "aos",
         gsap: "gsap.min",
         fontawesome: "font-awesome-all.min",
-        particles:"tsparticles.bundle.min"
+        particles: "tsparticles.bundle.min"
     },
     shim: {
         bootstrap: {
@@ -21,7 +21,7 @@ require.config({
     }
 });
 
-require(["jquery", "bootstrap", "aos", "gsap","particles", "fontawesome"], function ($, bootstrap, AOS, gsapModule,tsParticles) {
+require(["jquery", "bootstrap", "aos", "gsap", "particles", "fontawesome"], function ($, bootstrap, AOS, gsapModule, tsParticles) {
     console.log("All dependencies loaded");
 
     var gsap = gsapModule.gsap || gsapModule;
@@ -59,50 +59,32 @@ require(["jquery", "bootstrap", "aos", "gsap","particles", "fontawesome"], funct
         stagger: 0.2
     });
 
+    window.submitForm = function (e) {
+        e.preventDefault();
+        event.preventDefault();
 
-    // tsParticles.tsParticles.load("tsparticles", {
-    //     background: {
-    //       //color: "#0d0d0d"
-    //     },
-    //     fpsLimit: 60,
-    //     interactivity: {
-    //       events: {
-    //         onHover: {
-    //           enable: false,
-    //           mode: "repulse"
-    //         },
-    //         resize: false
-    //       },
-    //       modes: {
-    //         repulse: {
-    //           distance: 50,
-    //           duration: 0.4
-    //         }
-    //       }
-    //     },
-    //     particles: {
-    //       color: { value: "#000000" },
-    //       links: {
-    //         color: "#000000",
-    //         distance: 120,
-    //         enable: true,
-    //         opacity: 0.4,
-    //         width: 1
-    //       },
-    //       move: {
-    //         enable: true,
-    //         speed: 1,
-    //         direction: "none",
-    //         outModes: "bounce"
-    //       },
-    //       number: {
-    //         value: 80,
-    //         density: { enable: true, area: 800 }
-    //       },
-    //       opacity: { value: 0.5 },
-    //       shape: { type: "circle" },
-    //       size: { value: { min: 1, max: 5 } }
-    //     },
-    //     detectRetina: true
-    //   });
+        const name = document.getElementById('formName').value.trim();
+        const contact = document.getElementById('formMobile').value.trim();
+        const message = document.getElementById('formMessage').value.trim();
+
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('contact', contact);
+        formData.append('message', message);
+
+        fetch('mailer/send.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                //document.getElementById('responseMessage').innerHTML = `<div class="alert alert-success">${data}</div>`;
+                document.getElementById('queryForm').reset();
+            })
+            .catch(error => {
+                //document.getElementById('responseMessage').innerHTML = `<div class="alert alert-danger">❌ Error sending message.</div>`;
+                console.error('Error:', error);
+            });
+    };
+
 });
